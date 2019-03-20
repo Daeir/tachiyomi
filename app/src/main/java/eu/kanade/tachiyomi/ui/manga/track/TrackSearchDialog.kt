@@ -55,7 +55,9 @@ class TrackSearchDialog : DialogController {
                 .customView(R.layout.track_search_dialog, false)
                 .positiveText(android.R.string.ok)
                 .negativeText(android.R.string.cancel)
+                .neutralText(R.string.action_untrack)
                 .onPositive { _, _ -> onPositiveButtonClick() }
+                .onNeutral { _, _ -> onNeutralButtonClick() }
                 .build()
 
         if (subscriptions.isUnsubscribed) {
@@ -135,6 +137,10 @@ class TrackSearchDialog : DialogController {
 
     private fun onPositiveButtonClick() {
         trackController.presenter.registerTracking(selectedItem, service)
+    }
+
+    private fun onNeutralButtonClick() {
+        trackController.presenter.unregisterTracking(service)
     }
 
     private companion object {

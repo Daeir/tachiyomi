@@ -95,6 +95,10 @@ class TrackPresenter(
         }
     }
 
+    fun unregisterTracking(service: TrackService) {
+            db.deleteTrackForManga(manga, service).executeAsBlocking()
+    }
+
     private fun updateRemote(track: Track, service: TrackService) {
         service.update(track)
                 .flatMap { db.insertTrack(track).asRxObservable() }

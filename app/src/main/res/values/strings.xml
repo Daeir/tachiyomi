@@ -93,6 +93,8 @@
     <string name="action_restore">Restore</string>
     <string name="action_open">Open</string>
     <string name="action_login">Log in</string>
+    <string name="action_logout">Log out</string>
+    <string name="action_untrack">Untrack</string>
 
     <!-- Operations -->
     <string name="deleting">Deleting…</string>
